@@ -7,4 +7,8 @@ describe "Paper model", type: :model do
         expect(paper.venue).to eq("Berlin")
         expect(paper.year).to eq(1950)
     end
+    it "should not validate without title" do
+        @paper = Paper.new(:title => nil, :venue => "Berlin", :year => 1990)
+        expect(@paper).to_not be_valid
+    end
 end
