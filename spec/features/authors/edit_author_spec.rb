@@ -23,7 +23,6 @@ describe "Edit author page", type: :feature do
         page.fill_in 'author[last_name]', with: 'Turing'
         page.fill_in 'author[homepage]', with: "http://wikipedia.org/Alan_Turing"
         find('input[type="submit"]').click
-        expect(@alan.first_name).to eq("Alan")
         @alan.reload
         expect(@alan.first_name).to eq("Alan Mathison")
     end
