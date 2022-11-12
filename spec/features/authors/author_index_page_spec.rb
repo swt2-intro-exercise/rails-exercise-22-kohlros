@@ -19,4 +19,9 @@ describe "Show overview of all authors", type: :feature do
         expect(page).to have_link , href:author_path(@alan)
         expect(page).to have_link 'New', href: new_author_path
     end
+    it "should have a link to delete an author" do
+        expect(page).to have_link 'Delete', href:author_path(@alan)
+        find('input[class="delete"]').click
+        expect(Author.count).to eq(0)
+    end
 end
