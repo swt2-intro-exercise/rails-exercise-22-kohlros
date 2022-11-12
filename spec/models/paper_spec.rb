@@ -11,4 +11,14 @@ describe "Paper model", type: :model do
         @paper = Paper.new(:title => nil, :venue => "Berlin", :year => 1990)
         expect(@paper).to_not be_valid
     end
+    it "should not validate without venue" do
+        @paper = Paper.new(:title => "Turing test", :venue => nil, :year => 1990)
+        expect(@paper).to_not be_valid
+    end
+    it "should not validate without year" do
+        @paper = Paper.new(:title => "Turing test", :venue => "Berlin", :year => "zweitausend")
+        expect(@paper).to_not be_valid
+        @paper2 = Paper.new(:title => "Turing test", :venue => "Berlin", :year => 1950)
+        expect(@paper2).to be_valid
+    end
 end
