@@ -21,4 +21,8 @@ describe "Paper model", type: :model do
         @paper2 = Paper.new(:title => "Turing test", :venue => "Berlin", :year => 1950)
         expect(@paper2).to be_valid
     end
+    it "should have an empty list of authors" do
+        paper = Paper.new(title: "Turing", venue: "Berlin", year: 2023)
+        expect(paper.authors).to be_empty
+      end
 end

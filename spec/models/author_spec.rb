@@ -12,4 +12,8 @@ describe "Author model", type: :model do
         @author = Author.new(:first_name => "Alan", :last_name => nil, :homepage => "http://example.com")
         expect(@author).to_not be_valid
     end
+    it "should have an empty list of authors" do
+        author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "https://example.com")
+        expect(author.papers).to be_empty
+      end
 end
