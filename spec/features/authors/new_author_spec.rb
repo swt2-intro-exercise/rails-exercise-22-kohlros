@@ -11,7 +11,7 @@ describe "New author page", type: :feature do
     expect(page).to have_field('author[last_name]')
     expect(page).to have_field('author[homepage]')
   end
-  it "should safe the created author" do
+  it "should save the created author" do
     visit new_author_path
     page.fill_in 'author[first_name]', with: 'Alan'
     page.fill_in 'author[last_name]', with: 'Turing'
