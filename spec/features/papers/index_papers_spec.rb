@@ -12,4 +12,8 @@ describe "Show overview of all authors", type: :feature do
     it "should have an edit link" do
         click_link('Edit')
     end
+    it "should have an delete link" do
+        click_link('Delete')
+        expect(Paper.count).to eq(0)
+    end
 end
