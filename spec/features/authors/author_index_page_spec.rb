@@ -5,7 +5,7 @@ describe "Show overview of all authors", type: :feature do
         @alan = FactoryBot.create :author
         @alan.save
 
-        visit author_index_path
+        visit authors_path
     end
     it "should exist" do
     end
