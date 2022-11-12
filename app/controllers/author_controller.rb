@@ -9,6 +9,9 @@ class AuthorController < ApplicationController
     @author.save
     redirect_to @author
   end
+  def index
+    @authors = Author.all
+  end
   def show
     @author = Author.find(params[:id])
   end
